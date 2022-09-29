@@ -25,7 +25,7 @@ function Poster(props) {
 
     return (
         <View>
-            <View>
+            <View style={{ width: Winwidth }} >
                 <Image
                     source={require("../assets/poster.jpg")}
                     resizeMode={'cover'}
@@ -35,7 +35,7 @@ function Poster(props) {
                     }}
                 />
 
-                <Text style={{ fontWeight: "bold", fontSize: 20, color: "#000", left: 190, marginTop: 20, height: 70 }} >
+                <Text style={{ fontWeight: "bold", fontSize: 20, color: "#000", marginLeft: 190, marginTop: 20, height: 70 }} >
                     Title: {props.title}
                 </Text>
 

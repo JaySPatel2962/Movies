@@ -7,17 +7,11 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-// import AntDesign from 'react-native-vector-icons/AntDesign';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
-// import FontAwesome from 'react-native-vector-icons/FontAwesome';
-// import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { globalStyles, primaryColor, primaryTextDark } from '../../theme/theme';
 
 const fontColor = primaryTextDark;
 const bottomBarBackgroundColor = primaryColor;
 const focusedBottomBarBackgroundColor = '#20538b';
-// const bottomBarBorderRadius = 8;
 
 export default class CustomBottomTabBar extends Component<any, any> {
   constructor(props: any) {
@@ -30,6 +24,7 @@ export default class CustomBottomTabBar extends Component<any, any> {
     if (focusedOptions.tabBarVisible === false) {
       return null;
     }
+
     return (
       <View style={customBottomTabBarStyle.bottomTabBarContainer}>
         {state.routes.map((route: any, index: number) => {
@@ -43,76 +38,7 @@ export default class CustomBottomTabBar extends Component<any, any> {
 
           const isFocused = state.index === index;
           const iconColor = isFocused ? fontColor : '#bfbfbf';
-          const TabIcon = (size: { size: number }) => {
-            let icon = null;
-            switch (label) {
-              case 'Home':
-                // icon = (
-                //   <MaterialIcons
-                //     name="military-tech"
-                //     size={size.size}
-                //     color={iconColor}
-                //   />
-                // );
-                break;
-              case 'Savings':
-                // icon = (
-                //   <MaterialIcons
-                //     name="stacked-bar-chart"
-                //     size={size.size}
-                //     color={iconColor}
-                //   />
-                // );
-                break;
-              case 'Paylater':
-                // icon = (
-                //   <FontAwesome
-                //     name="space-shuttle"
-                //     size={size.size}
-                //     color={iconColor}
-                //   />
-                // );
-                break;
-              // case 'Challenges':
-              //   icon = (
-              //     <FontAwesome5
-              //       name="dice-two"
-              //       size={size.size}
-              //       color={iconColor}
-              //       light
-              //     />
-              //   );
-              //   break;
-              // case 'Hall of Fame':
-              //   icon = (
-              //     <MaterialIcons
-              //       name="star"
-              //       size={size.size}
-              //       color={iconColor}
-              //     />
-              //   );
-              //   break;
-              // case 'Search':
-              //   icon = (
-              //     <MaterialIcons
-              //       name="search"
-              //       size={size.size}
-              //       color={iconColor}
-              //     />
-              //   );
-              //   break;
-              // case 'Profile':
-              //   icon = (
-              //     <AntDesign
-              //       name="user"
-              //       size={size.size}
-              //       color={iconColor}
-              //     />
-              //   );
-              //   break;
-            }
-            return icon;
-          };
+          
           const onPress = () => {
             const event = navigation.emit({
               type: 'tabPress',
@@ -148,15 +74,7 @@ export default class CustomBottomTabBar extends Component<any, any> {
                 testID={options.tabBarTestID}
                 onPress={onPress}
                 onLongPress={onLongPress}
-                style={[
-                  //customBottomTabBarStyle.fullFlex,
-                  {
-                    // backgroundColor: 'yellow',
-                    // width: '100%',
-                    // paddingHorizontal: 0,
-                    //backgroundColor: focusedBottomBarBackgroundColor,
-                  },
-                ]}>
+                >
                 <View
                   style={[
                     //customBottomTabBarStyle.tabIconContainer,
@@ -168,7 +86,7 @@ export default class CustomBottomTabBar extends Component<any, any> {
                       marginHorizontal: 0,
                     },
                   ]}>
-                  <TabIcon size={iconSize} />
+                    
                   <Text
                     style={[
                       "#cdcdcd",

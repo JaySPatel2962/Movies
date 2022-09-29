@@ -14,11 +14,8 @@ import {
 let Winheight = Dimensions.get('window').height;
 let Winwidth = Dimensions.get('window').width;
 
-// import Carousel from 'react-native-snap-carousel';
-// import Carousel from 'react-native-reanimated-carousel';
 import SplashScreen from 'react-native-splash-screen';
 
-import MoviePhoto from '../components/MoviePhoto';
 import ListMovies from '../components/ListMovies';
 import Poster from '../components/Poster';
 
@@ -29,20 +26,6 @@ class HomePage extends Component<Props, State> {
       loading: true,
       latestMovies: [],
       featuredMovies: [],
-
-      entries: [
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello",
-        title = "Hello"
-      ]
     };
 
     this.loadData = this.loadData.bind(this);
@@ -137,12 +120,6 @@ class HomePage extends Component<Props, State> {
               style={{ width: Winwidth, marginBottom: '20%' }}
               showsVerticalScrollIndicator={false} >
 
-              {/* <View style={styles.slider} >
-            <Poster style={styles.slide} title="Assassin" />
-            <Poster style={styles.slide} title="Assassin" />
-            <Poster style={styles.slide} title="Assassin" />
-          </View> */}
-
               <FlatList
                 data={this.state.latestMovies}
                 horizontal={true}
@@ -154,28 +131,6 @@ class HomePage extends Component<Props, State> {
                 }
               />
 
-              {/* <Carousel
-                loop
-                width={Winwidth}
-                height={Winwidth / 2}
-                autoPlay={true}
-                data={[...new Array(6).keys()]}
-                scrollAnimationDuration={1000}
-                onSnapToItem={(index) => console.log('current index:', index)}
-                renderItem={({ index }) => (
-                  <View
-                    style={{
-                      flex: 1,
-                      borderWidth: 1,
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                      {index}
-                    </Text>
-                  </View>
-                )}
-              /> */}
 
               <View style={{ marginTop: 10 }} >
                 <ListMovies title="Latest Movies" data={this.state.latestMovies} navigation={this.props.navigation} />

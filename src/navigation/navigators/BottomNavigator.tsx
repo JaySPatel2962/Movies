@@ -2,7 +2,6 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import HomeScreen from '../../screens/HomeScreen';
 import { NavigationKeys, RouteParamMap } from '../NavigationKeys';
 import CustomBottomTabBar from '../bars/CustomBottomTabBar';
 import HomePage from '../../screens/HomePage';
@@ -17,7 +16,6 @@ class BottomNavigation extends Component<
   any
 > {
   render() {
-    // console.log(this.props.user.user.type);
     return (
       <BottomNavigator.Navigator
         initialRouteName={NavigationKeys.HomePage}
@@ -38,7 +36,6 @@ class BottomNavigation extends Component<
         )}
         screenOptions={{
           headerShown: false,
-          // ...TransitionPresets.SlideFromRightIOS,
         }}
       >
 
@@ -54,31 +51,11 @@ class BottomNavigation extends Component<
         <BottomNavigator.Screen
           options={{
             title: 'Search',
-            // tabBarVisible: false,
           }}
-          name={NavigationKeys.Savings}
-          // component={Savings}
+          name={NavigationKeys.Search}
           component={Search}
         />
 
-
-        {/* <BottomNavigator.Screen
-          options={{
-            title: 'Paylater',
-          }}
-          name={NavigationKeys.PayLater}
-          component={PayLater}
-        /> */}
-
-
-        {/* <BottomNavigator.Screen
-          options={{
-            title: 'Challenges',
-            // tabBarVisible: false,
-          }}
-          name={NavigationKeys.HomePage}
-          component={HomePage}
-        /> */}
       </BottomNavigator.Navigator>
     );
   }
